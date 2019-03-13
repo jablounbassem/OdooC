@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container">
+        <br>
+
+        <a href="{{ path('odoo_connector_addPurchaseForm') }}"><button type="button" class="btn btn-primary" >Create</button></a>
+
+        <br><br>
+        <table class="table table-sm">
+            <thead class="thead-dark">
+            <tr class="table-dark">
+                <th scope="col">Reference</th>
+                <th scope="col">Order Date</th>
+                <th scope="col">Vendor</th>
+                <th scope="col">Scheduled Date</th>
+                <th scope="col">Purchase Representative</th>
+                <th scope="col">Untadex</th>
+                <th scope="col">Total</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for purchase in purchases %}
+
+            <tr>
+                <td>{{ purchase.name }}</td>
+                <td>{{ purchase.date_order }} </td>
+                <td>{{ purchase.partner_id['1'] }}</td>
+                <td>{{ purchase.date_planned }}</td>
+                <td>{{ purchase.user_id['1'] }}</td>
+                <td>{{ purchase.amount_untaxed }}</td>
+                <td>{{ purchase.amount_total }}</td>
+
+            </tr>
+            {% endfor %}
+
+
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}
+

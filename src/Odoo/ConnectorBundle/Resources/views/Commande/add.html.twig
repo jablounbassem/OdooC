@@ -1,0 +1,51 @@
+
+{% extends "base.html.twig" %}
+{% block body %}
+    <div class="container">
+        <h1>Ajouter une ligne de commande</h1>
+        <form method="post" action="{{ path('odoo_connector_addcl') }}">
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Commande n°</label>
+
+                <select class="form-control" id="exampleFormControlSelect1" name="commande">
+                    {% for order in orders %}
+                        <option value="{{ order.id }}">{{ order.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Article</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="article">
+                    {% for article in articles %}
+                        <option value="{{ article.id }}">{{ article.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Description</label>
+                <input type="text" name="decription" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Quantité</label>
+                <input type="number" name="quantite" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Prix unitaire </label>
+                <input type="number" name="pu" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Date prévu</label>
+                <input type="date" name="date" class="form-control">
+            </div>
+
+            <input type="submit" value="Ajouter"
+                   class="btn btn-primary" />
+        </form>
+    </div>
+{% endblock %}
+
+
+
+

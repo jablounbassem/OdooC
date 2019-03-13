@@ -1,0 +1,79 @@
+odoo_connector_adduser:
+  path:     /user/add/{name}
+  defaults: { _controller: OdooConnectorBundle:Client:add}
+
+odoo_connector_lisuser:
+  path:     /users/
+  defaults: { _controller: OdooConnectorBundle:Client:listUsers}
+
+odoo_connector_updateuser:
+  path:     /user/update/{id}/{name}
+  defaults: { _controller: OdooConnectorBundle:Client:update}
+
+odoo_connector_deleteuser:
+  path:     /user/delete/{id}
+  defaults: { _controller: OdooConnectorBundle:Client:delete}
+
+odoo_connector_addCommandeForm:
+  path:     /commande/ajout
+  defaults: { _controller: OdooConnectorBundle:Commande:showForm   }
+
+odoo_connector_addCommande:
+  path:     /commande/add
+  defaults: { _controller: OdooConnectorBundle:Commande:add   }
+
+odoo_connector_oddaddCommande:
+  path:     /commande/odoo/add
+  defaults: { _controller: OdooConnectorBundle:Commande:oddAdd   }
+
+odoo_connector_testCommande:
+  path:     /commande/test
+  defaults: { _controller: OdooConnectorBundle:Commande:test   }
+odoo_connector_testLigneCommande:
+  path:     /commande/ligne
+  defaults: { _controller: OdooConnectorBundle:Commande:testLigneCommande   }
+
+odoo_connector_purchaseOrderLists:
+  path:     /purchase_order/listes
+  defaults: { _controller: OdooConnectorBundle:Purchase:listPurchase   }
+
+odoo_connector_addPurchaseForm:
+  path:     /add/purchaseorder/form
+  defaults: { _controller: OdooConnectorBundle:Purchase:addPurchaseForm   }
+
+
+odoo_connector_addPurchase:
+  path:     /add/purchaseorder
+  defaults: { _controller: OdooConnectorBundle:Purchase:addPurchese   }
+
+odoo_connector_strecture:
+  path:     /fields
+  defaults: { _controller: OdooConnectorBundle:Test:fields   }
+
+odoo_connector_date:
+  path:     /date
+  defaults: { _controller: OdooConnectorBundle:Test:dateF   }
+
+odoo_connector_Lignecommande:
+  path:     /lignecommande/ajout
+  defaults: { _controller: OdooConnectorBundle:Purchase:commandeLineForm   }
+
+odoo_connector_Article:
+  path:     /articles
+  defaults: { _controller: OdooConnectorBundle:Test:tesorder   }
+
+odoo_connector_addcl:
+  path:     /add/commande/ligne
+  defaults: { _controller: OdooConnectorBundle:Purchase:commandeLineAdd   }
+
+odoo_connector_zzz:
+  path:     /form
+  defaults: { _controller: OdooConnectorBundle:Purchase:form }
+
+
+                
+
+
+                    
+
+

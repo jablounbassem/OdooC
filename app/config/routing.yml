@@ -1,0 +1,11 @@
+odoo_connector:
+    resource: "@OdooConnectorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+api:
+    resource: '.'
+    type: 'api_platform'
+
+app:
+    resource: '@AppBundle/Action/'
+    type: 'annotation'
