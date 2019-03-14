@@ -132,13 +132,13 @@ body .btn-primary.dropdown-toggle {
 body .btn-primary {
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-color: #0088cc;
-	border-color: #0088cc;
+	background-color: #5F5E97;
+	border-color: #5F5E97;
 }
 
 body .btn-primary:hover {
-	border-color: #0099e6 !important;
-	background-color: #0099e6;
+	border-color: #5A4081 !important;
+	background-color: #5A4081;
 }
 
 body .btn-primary:active,

@@ -1,0 +1,54 @@
+{% extends '@OdooConnector/master/index.html.twig' %}
+{% block titre %}
+    Demande de prix
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/theme-custom.css') }}">
+
+{% endblock %}
+{% block navbar %}
+{% include '@OdooConnector/icludes/purchase_nav.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    <br>
+<h4><b>Demandes des prix</b></h4>
+    <a href="{{ path('odoo_connector_addPurchaseForm') }}"><span  class="btn btn-sm btn-primary" >Créer</span></a>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="panel">
+
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table mb-none">
+                            <thead class="active">
+                            <th scope="col">Référence</th>
+                            <th scope="col">Date de la commande</th>
+                            <th scope="col">Fournisseur</th>
+                            <th scope="col">Date prévue</th>
+                            <th scope="col">Responsable achats</th>
+                            <th scope="col">Hors taxe</th>
+                            <th scope="col">Total</th>
+                            </thead>
+                            <tbody>
+                            {% for purchase in purchases %}
+
+                                <tr>
+                                    <td>{{ purchase.name }}</td>
+                                    <td>{{ purchase.date_order }} </td>
+                                    <td>{{ purchase.partner_id['1'] }}</td>
+                                    <td>{{ purchase.date_planned }}</td>
+                                    <td>{{ purchase.user_id['1'] }}</td>
+                                    <td>{{ purchase.amount_untaxed }}</td>
+                                    <td>{{ purchase.amount_total }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}
